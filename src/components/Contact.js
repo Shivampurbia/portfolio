@@ -1,17 +1,34 @@
-import React from 'react';
+import React,{useState} from 'react';
 import emailjs from 'emailjs-com';
+import sent from './sent.png';
 
 const Contact = () => {
+  const [name,setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState(""); 
+  const [submitClicked,setSubmitClicked] = useState(false);
+  
   function mailer(e){
     e.preventDefault();
-    emailjs.sendForm('service_pb6t28a','template_uz3kqid',e.target,'user_DjMFlTUloSX0TTmGpZaS9')
-    .then(res=>{
-      console.log(res);
-    }).catch(err=>{
-      console.log(err);
-    })
+    console.log(e.target.name.value)
+
+    // emailjs.sendForm('service_pb6t28a','template_uz3kqid',e.target,'user_DjMFlTUloSX0TTmGpZaS9')
+    // .then(res=>{
+    //   console.log(res);
+    // }).catch(err=>{
+    //   console.log(err);
+    // })
+    setSubmitClicked(true);
+    setTimeout(()=>{
+      setSubmitClicked(false)
+    },3000)
+    setName("");
+    setEmail("");
+    setMessage("");
+    
     
   }
+  
 
   return (
     <section className='my-28' id='contact'>
@@ -58,14 +75,18 @@ const Contact = () => {
             <input type='hidden' name='form-name' value='contact' />
  
             <label htmlFor='name'>Name</label>
-            <input type='text' name='name' id='name' className='gradient' required></input>
+            <input type='text' name='name' value={name} onChange={(e) => setName(e.target.value)} placeholder='Enter your name' id='name' className='gradient' required></input>
             <label htmlFor='email'>Email</label>
-            <input type='email' name='email' id='email' className='gradient' required></input>
+            <input type='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} id='email' placeholder='Enter your mail' className='gradient' required></input>
             <label htmlFor='message'>Message</label>
-            <textarea name='message' id='message' cols='25' rows='5' className='gradient' required></textarea>
-            <button type='submit' className='border border-gray-500 p-2 rounded-lg w-auto mr-auto shadow-md'>
-              Send Message
-            </button>
+            <textarea name='message' onChange={(e) => setMessage(e.target.value)} value={message} id='message' cols='25' rows='5' className='gradient' required></textarea>
+            <div style={{display:"flex"}}>
+              <button type='submit' className='border border-gray-500 p-2 rounded-lg w-auto mr-auto shadow-md'>
+                Send Message
+              </button>
+              {submitClicked && <img alt="sent" src={sent} style={{height:"40px",width:"40px"}}></img>}
+            </div>
+            
           </form>
         </div>
       </div>
