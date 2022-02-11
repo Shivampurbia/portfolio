@@ -18,7 +18,7 @@ const projects = [
   {
     title: 'React CRD app',
     image: './images/react-crd.gif',
-    description: 'A simple React Create-Read-Delete app with firebase authentication and firestore for data storage wiyh multi-select checkbox filter',
+    description: 'A simple React Create-Read-Delete app with firebase authentication and firestore for data storage with multi-select checkbox filter',
     tools: ['React', 'Firebase','Firestore'],
     github: 'https://github.com/Shivampurbia/react-curd-app',
     link: 'https://react-curd-app.vercel.app/',
