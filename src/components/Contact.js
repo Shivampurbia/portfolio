@@ -12,12 +12,12 @@ const Contact = () => {
     e.preventDefault();
     console.log(e.target.name.value)
 
-    // emailjs.sendForm('service_pb6t28a','template_uz3kqid',e.target,'user_DjMFlTUloSX0TTmGpZaS9')
-    // .then(res=>{
-    //   console.log(res);
-    // }).catch(err=>{
-    //   console.log(err);
-    // })
+    emailjs.sendForm('service_pb6t28a','template_uz3kqid',e.target,'user_DjMFlTUloSX0TTmGpZaS9')
+    .then(res=>{
+      console.log(res);
+    }).catch(err=>{
+      console.log(err);
+    })
     setSubmitClicked(true);
     setTimeout(()=>{
       setSubmitClicked(false)
