@@ -21,7 +21,7 @@ const projects = [
     description: 'A simple React Create-Read-Delete app with firebase authentication and firestore for data storage with multi-select checkbox filter',
     tools: ['React', 'Firebase','Firestore'],
     github: 'https://github.com/Shivampurbia/react-curd-app',
-    link: 'https://react-curd-app.vercel.app/',
+    link: 'https://react-crd-app.vercel.app/',
   },
 ];
 
