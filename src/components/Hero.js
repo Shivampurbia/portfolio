@@ -24,7 +24,7 @@ const Hero = () => {
       <div className='max-w-md mb-auto space-y-5'>
         <h1 className='text-5xl font-bold md:text-7xl'>Hello. I’m Shivam</h1>
         <p className='tracking-wide leading-relaxed'>
-          I love developing user-friendly, accessible and responsive websites. I never stop learning and for me, each new project is another adventure to make mistakes and learn different tools and tech.{' '}
+          I love developing user-friendly, accessible and responsive webapps. I never stop learning and for me, each new project is another adventure to make mistakes and learn different tools and tech.{' '}
         </p>
       </div>
     </section>
