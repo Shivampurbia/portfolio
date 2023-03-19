@@ -10,6 +10,7 @@ module.exports = {
       ...theme('colors'),
       primary: '#3490dc',
       secondary: '#ffed4a',
+      tertiary:'#121212',
       danger: '#e3342f',
       black: '#121212',
       gray: '#1c1c1c',

@@ -1,6 +1,9 @@
 import React,{useState} from 'react';
 import emailjs from 'emailjs-com';
 import sent from './sent.png';
+import { slideIn } from "../utils/motion";
+import { motion } from "framer-motion";
+import EarthCanvas from './canvas/EarthCanvas';
 
 const Contact = () => {
   const [name,setName] = useState("");
@@ -70,12 +73,13 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className='bg-gray px-5 py-10 md:py-8 sm:p-8 my-2 md:rounded-lg shadow-lg  justify-between w-full  md:w-6/12 '>
+        <div className='sm:-mt-14 bg-gray px-5 py-10 md:py-8 sm:p-8 my-2 md:rounded-lg shadow-lg  justify-between w-full  md:w-6/12 '>
           <form onSubmit={mailer} className='flex flex-col space-y-3 m-auto w-full' name='contact'>
             <input type='hidden' name='form-name' value='contact' />
  
             <label htmlFor='name'>Name</label>
-            <input type='text' name='name' value={name} onChange={(e) => setName(e.target.value)} placeholder='Enter your name' id='name' className='gradient' required></input>
+            <input type='text' name='name' value={name} style={{
+            }} onChange={(e) => setName(e.target.value)} placeholder='Enter your name' id='name' className='gradient' required></input>
             <label htmlFor='email'>Email</label>
             <input type='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} id='email' placeholder='Enter your mail' className='gradient' required></input>
             <label htmlFor='message'>Message</label>
@@ -90,11 +94,22 @@ const Contact = () => {
           </form>
         </div>
       </div>
-      <div className='relative md:bottom-56 mr-auto ml-auto md:mr-auto md:ml-0 max-w-xs md:max-w-sm' onClick={() => window.scroll(0, 0)}>
+      {/* <div className='relative md:bottom-56 mr-auto ml-auto md:mr-auto md:ml-0 max-w-xs md:max-w-sm' onClick={() => window.scroll(0, 0)}>
         <picture>
           <img src={'./images/rocket.gif'} width='200px' height='200px' loading='lazy' alt='red rocket flying' />
         </picture>
-      </div>
+      </div> */}
+      <motion.div
+      onClick={() => window.scroll(0, 0)}
+        variants={slideIn("right", "tween", 0.2, 1)}
+        style={{
+          height:'25rem',
+        }}
+      >
+        <EarthCanvas/>
+        {/* <text>dsfsd</text> */}
+      </motion.div> 
+   
     </section>
   );
 };

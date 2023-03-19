@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react';
+import Works from './components/Works';
 
 const Header = lazy(() => import('./components/Header'));
 const Hero = lazy(() => import('./components/Hero'));
@@ -22,6 +23,7 @@ function App() {
         <Header />
         <main>
           <Hero />
+          <Works/>
           <Project />
           <Skill />
           <Contact />

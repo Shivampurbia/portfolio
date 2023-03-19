@@ -5,8 +5,8 @@ const Project = () => {
   return (
     <>
       <section className='my-28 px-5' id='projects'>
-        <header className='text-2xl font-bold pt-10'>
-          <h2>Projects</h2>
+        <header className='text-3xl font-bold pt-10'>
+          <h2>Web Projects</h2>
         </header>
         <div className='my-7 space-y-24'>
           {projects.map((project, index) => (
@@ -14,8 +14,9 @@ const Project = () => {
               <picture className={index % 2 === 0 ? 'w-full md:w-6/12 shadow-lg ' : 'w-full md:w-6/12 shadow-lg md:order-1'}>
                 
                 <div style={{background: 'linear-gradient(to top, rgb(9, 32, 63) 0%, rgb(83, 120, 149) 100%)'
-,padding:".7rem",borderRadius:"0.6rem"}}>
-                  <img src={project.image} width='768px' height='575px' loading='lazy' alt={project.title} className='rounded-lg' />                  
+,padding:".7rem",borderRadius:"1.2rem"}}
+>
+                  <img src={project.image} width='768px' height='575px' loading='lazy' alt={project.title} className='rounded-2xl' />                  
                 </div>
               </picture>
               <div className='flex flex-col overflow-auto  space-y-3 my-3 mx-1 w-full md:w-5/12 '>
